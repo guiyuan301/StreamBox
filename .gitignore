@@ -17,9 +17,18 @@ StreamBox/*.pro.user
 StreamBox/*.pro.user.*
 StreamBox/*.pro.autosave
 
-# 可执行程序、依赖 DLL 与运行数据（体积大，不纳入版本库）
-# 注意：ffmpeglib/lib 与 lib/sqlite3.lib 中的链接库必须入库，否则 clone 后无法链接
-StreamBox/bin/
+# bin 目录只排除构建输出与运行临时文件
+# 依赖 DLL、ffmpeg.exe、StreamBox.db 必须入库，否则 clone 后无法运行
+StreamBox/bin/*.exe
+# ffmpeg.exe 是录制功能依赖的运行时程序，必须入库（不能被上面的 *.exe 规则排除）
+!StreamBox/bin/ffmpeg.exe
+StreamBox/bin/temp.*
+StreamBox/bin/StreamBox.db-journal
+StreamBox/bin/StreamBox.db-wal
+StreamBox/bin/StreamBox.db-shm
+
+# 运行期视频素材体积过大，不纳入版本库
+StreamBox/bin/dtbase_path/video_path/
 
 # 临时文件
 *.tmp

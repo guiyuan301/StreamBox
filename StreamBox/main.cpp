@@ -10,8 +10,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    //登录数据库
-    dbSqlite3::setFileDbName("StreamBox.db");
+    //登录数据库：固定使用可执行文件所在目录，避免受工作目录影响
+    dbSqlite3::setFileDbName(QCoreApplication::applicationDirPath() + "/StreamBox.db");
     // 防止在窗口切换的瞬间（前一个隐藏，后一个还没显示）导致程序意外退出
     a.setQuitOnLastWindowClosed(false);
 
