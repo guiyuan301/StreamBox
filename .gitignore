@@ -18,13 +18,8 @@ StreamBox/*.pro.user.*
 StreamBox/*.pro.autosave
 
 # 可执行程序、依赖 DLL 与运行数据（体积大，不纳入版本库）
+# 注意：ffmpeglib/lib 与 lib/sqlite3.lib 中的链接库必须入库，否则 clone 后无法链接
 StreamBox/bin/
-StreamBox/lib/*.lib
-
-# ffmpeg SDK 中的二进制库文件
-StreamBox/ffmpeglib/lib/*.lib
-StreamBox/ffmpeglib/lib/*.dll.a
-StreamBox/ffmpeglib/lib/*.def
 
 # 临时文件
 *.tmp
