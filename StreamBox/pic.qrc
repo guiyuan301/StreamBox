@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pic/StreamBox.png</file>
+        <file>pic/serach.png</file>
+        <file>pic/setting.png</file>
+        <file>pic/back.png</file>
+        <file>pic/home.png</file>
+        <file>pic/mine.png</file>
+    </qresource>
+</RCC>
